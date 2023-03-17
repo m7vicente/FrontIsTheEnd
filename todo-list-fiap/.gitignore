@@ -1,11 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-#envs
-.env
-
 # dependencies
 /node_modules
-/todo-list-fiap/node_modules
 /.pnp
 .pnp.js
 
@@ -38,3 +34,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# .envs
+.env
+.env.local
+.env.prd
+.env.hml
