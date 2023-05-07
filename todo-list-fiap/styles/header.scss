@@ -1,64 +1,82 @@
-@import "./config.scss";
+@import './config.scss';
 
 .container-header {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  padding: 0 24px;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(145, 163, 173, 0.15);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $lightGreyColor;
+    padding: 24px;
 
-  .logo {
-    width: 89px;
-  }
-
-  button {
-    display: none;
-  }
-
-  div {
-    span {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
-      text-align: right;
-      letter-spacing: 0.01em;
-      color: $primaryColor;
-      margin-right: 8px;
-    }
-  }
-
-  @media screen and (min-width: $mediaQueryDesktop) {
-    padding: 28px 100px;
-
-    .logo {
-      width: 118px;
+    .desktop{
+        display: none;
     }
 
-    button {
-      align-items: center;
-      display: flex;
-      height: 45px;
-      strong {
-        font-size: 22px;
-        margin-right: 8px;
-      }
+    button{
+        display: none;
     }
 
-    div {
-      span {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
-        color: $primaryColor;
-        margin-right: 24px;
-      }
-
-      img {
-        cursor: pointer;
-      }
+    .logo{
+        width: 92px;
     }
-  }
+
+    .mobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            color: $primaryColor;
+            margin-right: 10px;
+        }
+
+        img {
+            width: 30px;
+        }
+    }
+
+    @media screen and (min-width: $mediaQueryDesktop) {
+        padding: 40px 80px;
+        
+        .mobile{
+            display: none;
+        }
+
+        .logo{
+            width: 130px;
+        }
+
+        .desktop{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            span {
+                font-size: 20px;
+                color: $primaryColor;
+                margin-right: 20px;
+            }
+    
+            img {
+                cursor: pointer;
+            }
+        }
+
+        button{
+            display: block;
+            width: 175px;
+            height: 40px;
+            background-color: $secundaryColor;
+            border: none;
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            align-items: center;
+
+            span{
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+        }
+    }
 }

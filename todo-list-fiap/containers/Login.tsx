@@ -18,7 +18,7 @@ export const Login: NextPage<LoginProps> = ({ setAccessToken }) => {
       !login ||
       login.trim().length < 1 ||
       !password ||
-      password.trim().length < 6
+      password.trim().length < 3
     )
       return setError("Favo, preenche a baixo");
 

@@ -2,8 +2,12 @@ import { NextPage } from "next";
 
 type HeaderProps = {
   setAccessToken(s: string): void;
+  showModal(): void;
 };
-export const Header: NextPage<HeaderProps> = ({ setAccessToken }) => {
+export const Header: NextPage<HeaderProps> = ({
+  setAccessToken,
+  showModal
+}) => {
   const mobile = window.innerWidth < 954;
 
   const userName = localStorage.getItem("name");
@@ -16,17 +20,17 @@ export const Header: NextPage<HeaderProps> = ({ setAccessToken }) => {
 
   return (
     <div className="container-header">
-      <img src="/logo.svg" alt="logo-fiap" className="logo" />
-      <button>
-        <strong>+</strong> Adicionar tarefa
+      <img src="/logo.svg" alt="Logo Fiap" className="logo" />
+      <button onClick={showModal}>
+        <span>+</span>Adicionar Tarefa
       </button>
-      <div>
+      <div className="mobile">
         <span>Olá, {firstName}</span>
-        <img
-          src={mobile ? "/exit-d.svg" : "exit-m.svg"}
-          alt="Sair"
-          onClick={signOut}
-        />
+        <img src="/exit-m.svg" alt="Sair" onClick={signOut} />
+      </div>
+      <div className="desktop">
+        <span>Olá, {firstName}</span>
+        <img src="/exit-d.svg" alt="Sair" onClick={signOut} />
       </div>
     </div>
   );

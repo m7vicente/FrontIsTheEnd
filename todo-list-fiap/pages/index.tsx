@@ -17,9 +17,9 @@ export default function Index() {
 
   if (accessToken === null) return <></>;
 
-  return !!accessToken ? (
-    <Home setAccessToken={setAccessToken} />
-  ) : (
+  return !accessToken ? (
     <Login setAccessToken={setAccessToken} />
+  ) : (
+    <Home setAccessToken={setAccessToken} />
   );
 }
