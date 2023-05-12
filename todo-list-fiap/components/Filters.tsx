@@ -20,7 +20,7 @@ export const Filters: NextPage<FiltersProps> = ({
   const [showFilters, setShowFilters] = useState(false);
 
   const statusOptions = [
-    { display: "Todes", value: 0 },
+    { display: "Todos", value: 0 },
     { display: "Concluida", value: 1 },
     { display: "Em Andamento", value: 2 }
   ];
